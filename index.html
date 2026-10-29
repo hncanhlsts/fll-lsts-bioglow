@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLL Challenge Cấp Trường – Trường THCS & THPT Đinh Thiện Lý | Mùa Giải BIOGLOW</title>
+  <meta name="description" content="Hệ thống chấm điểm, tổng hợp và công bố kết quả Vòng 3 Tuyển chọn Đội FLL Cấp Trường – Trường THCS & THPT Đinh Thiện Lý (LSTS) – Mùa giải BIOGLOW." />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20261029_v6" />
+</head>
+<body>
+  <!-- THANH ĐIỀU HƯỚNG TRÊN CÙNG -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="brand" style="cursor: pointer;" onclick="navigateTo('LANDING')">
+        <div class="brand-badge">
+          FLL LSTS<br/>BIOGLOW
+        </div>
+        <div class="brand-text">
+          <h1>TRƯỜNG THCS & THPT ĐINH THIỆN LÝ</h1>
+          <p>Vòng 3 Tuyển Chọn Đội FLL Cấp Trường • Hệ Thống Chấm Điểm & Công Bố Kết Quả</p>
+        </div>
+      </div>
+
+      <div id="navActions" class="nav-actions"></div>
+    </div>
+  </header>
+
+  <!-- NỘI DUNG CHÍNH -->
+  <main id="appMain" class="container"></main>
+
+  <!-- KHU VỰC HIỂN THỊ & IN PHIẾU ĐIỂM THEO HẠNG MỤC (CHUẨN A4) -->
+  <div id="printModalOverlay" class="print-modal-overlay no-print" style="display: none;">
+    <div class="print-modal-box">
+      <div class="print-modal-toolbar">
+        <div>
+          <strong id="printModalTitle" style="font-size: 15px; color: #FFFFFF;">🖨️ Xem trước phiếu điểm</strong>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn btn-gold" onclick="executeSheetPrint()">🖨️ In / Lưu PDF</button>
+          <button class="btn btn-outline-light" onclick="closePrintModal()">✖ Đóng</button>
+        </div>
+      </div>
+      <div id="printPreviewContent" class="print-preview-content"></div>
+    </div>
+  </div>
+
+  <!-- BẢN IN TRỰC TIẾP KHI GỌI WINDOW.PRINT() -->
+  <div id="printableSheetContainer" class="printable-sheet-container"></div>
+
+  <!-- TOAST THÔNG BÁO -->
+  <div id="toastBox" class="toast-notification no-print"></div>
+
+  <script>
+    document.write('<script src="app.js?v=' + Date.now() + '"><\/script>');
+  </script>
+</body>
+</html>
